@@ -1,0 +1,103 @@
+body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #4f46e5, #3b82f6);
+      position: relative;
+      color: #fff;
+      transition: background 0.5s ease, color 0.5s ease;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body::before, body::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.6;
+      z-index: 0;
+    }
+    body::before {
+      width: 350px; height: 350px;
+      background: #f43f5e;
+      top: -80px; left: -80px;
+    }
+    body::after {
+      width: 450px; height: 450px;
+      background: #facc15;
+      bottom: -100px; right: -100px;
+    }
+    /* Light theme overrides */
+    [data-bs-theme="light"] {
+      background: linear-gradient(135deg, #fefefe, #e0e7ff);
+      color: #111;
+    }
+    [data-bs-theme="light"]::before {
+      background: #a78bfa;
+      opacity: 0.3;
+      top: -60px; left: -60px;
+    }
+    [data-bs-theme="light"]::after {
+      background: #60a5fa;
+      opacity: 0.3;
+      bottom: -80px; right: -80px;
+    }
+
+    #themetoggle{
+      
+    }
+    /* Content containers layering */
+    .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Card styles for dark and light mode */
+    .card {
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      background-color: rgba(255 255 255 / 0.1);
+      color: inherit;
+      transition: background-color 0.5s ease;
+    }
+    [data-bs-theme="light"] .card {
+      background-color: #fff;
+      color: #111;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    }
+
+    /* Navbar styling */
+    nav.navbar {
+      background-color: rgba(255 255 255 / 0.15);
+      backdrop-filter: saturate(180%) blur(20px);
+      transition: background-color 0.5s ease;
+      color: inherit;
+    }
+    [data-bs-theme="light"] nav.navbar {
+      background-color: #fff;
+    }
+
+    /* Buttons consistent size */
+    .btn {
+      font-weight: 600;
+      padding: 0.6rem 1.5rem;
+      border-radius: 0.6rem;
+      trsansition: background-color 0.3s ease;
+    }
+
+    /* Hero section text */
+    .hero h1 {
+      text-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    [data-bs-theme="light"] .hero h1 {
+      text-shadow: none;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 767px) {
+      .hero {
+        flex-direction: column !important;
+        text-align: center;
+      }
+      .hero img {
+        max-width: 80%;
+        margin: auto;
+      }
+    }
